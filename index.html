@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portofolio Digital | Bagas Reza Purwaka, S.Tr.T.</title>
+    <meta name="description" content="Gerbang E-Portofolio Digital Bagas Reza Purwaka, S.Tr.T. - Rekam Jejak, Perangkat Pembelajaran, Refleksi Kritis, dan Filosofi Pengajaran.">
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Canvas Overlay with Video -->
+    <div class="bg-wrapper">
+        <video class="bg-video" autoplay loop muted playsinline poster="assets/bg.jpg">
+            <source src="assets/bg_video.mp4" type="video/mp4">
+        </video>
+        <div class="bg-gradient-overlay"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- ==========================================
+             VIEW 1: MAIN GATEWAY (GERBANG UTAMA)
+             ========================================== -->
+        <div id="main-gateway-view" class="view-pane active">
+            <!-- Header Navbar -->
+            <header class="navbar">
+                <div class="brand" onclick="showSlide(1)" style="cursor: pointer;" title="Kembali ke Beranda Utama">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div class="brand-text">
+                        <h1 class="brand-title">E-Portofolio</h1>
+                        <span class="brand-subtitle">Bagas Reza Purwaka, S.Tr.T.</span>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <span class="status-indicator"><span class="dot-online"></span> PPG Prajabatan Vokasi</span>
+                </div>
+            </header>
+
+            <!-- Hero Section (Slide 1) -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <p class="hero-description">
+                        Silakan jelajahi portofolio di bawah ini untuk meninjau rekam jejak, perangkat pembelajaran, dan pengalaman selama kegiatan PPG Prajabatan.
+                    </p>
+
+                    <div class="hero-actions">
+                        <button class="btn-primary" onclick="showSlide(2)">
+                            <span>JELAJAHI PORTOFOLIO</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </button>
+                    </div>
+
+                    <div class="partners-bar">
+                        <span class="partners-label">Supported by</span>
+                        <div class="partners-list">
+                            <span>PPG Prajabatan</span>
+                            <span class="sep">/</span>
+                            <span>Teknik Mesin</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cards Grid Section (Slide 2) -->
+            <section class="cards-section" id="portfolio-cards-section">
+                <div class="section-header">
+                    <div class="section-header-top">
+                        <span class="section-tag">PILIH DOKUMEN PORTOFOLIO</span>
+                        <button class="btn-back-slide" onclick="showSlide(1)">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <span>KEMBALI KE UTAMA</span>
+                        </button>
+                    </div>
+                    <h3 class="section-title">Rekam Jejak PPG</h3>
+                </div>
+
+                <div class="cards-grid">
+                    <!-- Card 1: Seminar PPG -->
+                    <div class="portfolio-card card-blue" id="card-1">
+                        <div class="card-icon-wrapper">
+                            <div class="icon-circle icon-blue">
+                                <i class="fa-solid fa-folder-closed"></i>
+                            </div>
+                        </div>
+                        <div class="card-number num-blue">01</div>
+                        <h3 class="card-title">Seminar PPG</h3>
+                        <div class="card-divider divider-blue"></div>
+                        <p class="card-desc">
+                            Materi, Laporan, dan Dokumentasi kegiatan Seminar PPG
+                        </p>
+                        <button class="card-btn btn-blue" onclick="openPortfolio1()">
+                            <span>Masuk Seminar PPG</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </button>
+                    </div>
+
+                    <!-- Card 2: PPL Mandiri -->
+                    <div class="portfolio-card card-green" id="card-2">
+                        <div class="card-icon-wrapper">
+                            <div class="icon-circle icon-green">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                        </div>
+                        <div class="card-number num-green">02</div>
+                        <h3 class="card-title">PPL Mandiri</h3>
+                        <div class="card-divider divider-green"></div>
+                        <p class="card-desc">
+                            Perangkat Praktik dan Dokumentasi di Sekolah Mitra
+                        </p>
+                        <button class="card-btn btn-green" onclick="openPortfolio(2)">
+                            <span>Masuk PPL Mandiri</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer Quote -->
+            <footer class="footer-quote">
+                <span class="quote-mark">“</span>
+                <span class="quote-text">Terus belajar, berbagi, dan menginspirasi.</span>
+                <span class="quote-mark">”</span>
+            </footer>
+        </div>
+
+        <!-- ==========================================
+             VIEW 2: DEDICATED E-PORTOFOLIO 1 VIEW
+             ========================================== -->
+        <div id="portfolio1-view" class="view-pane">
+            <!-- Header Top Bar -->
+            <header class="header-topbar">
+                <div class="brand-wrapper">
+                    <button class="btn-back" onclick="closePortfolio1()" title="Kembali ke Gerbang Utama">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>KEMBALI KE GERBANG</span>
+                    </button>
+                    <div class="brand">
+                        <div class="brand-icon">
+                            <i class="fa-solid fa-folder-closed"></i>
+                        </div>
+                        <div class="brand-text">
+                            <h1 class="brand-title">SEMINAR PPG</h1>
+                            <span class="brand-subtitle">Seminar PPG • Bagas Reza Purwaka, S.Tr.T.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-right">
+                    <span class="status-indicator"><span class="dot-online"></span> PPG Prajabatan Vokasi</span>
+                    <button class="mobile-toggle-btn" id="mobileToggleBtn" aria-label="Buka Menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- 5 Items Main Navigation Bar -->
+            <nav class="main-navbar">
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <button class="nav-btn active" data-tab="beranda" onclick="switchTab('beranda')">
+                            <i class="fa-solid fa-house"></i>
+                            <span>BERANDA</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-btn" data-tab="visi-guru" onclick="switchTab('visi-guru')">
+                            <i class="fa-solid fa-id-card"></i>
+                            <span>IDENTIFIKASI DIRI</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-btn" data-tab="refleksi" onclick="switchTab('refleksi')">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                            <span>REFLEKSI MATA KULIAH</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-btn" data-tab="refleksi-keseluruhan" onclick="switchTab('refleksi-keseluruhan')">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <span>REFLEKSI KESELURUHAN</span>
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-btn" data-tab="inovasi-terbaru" onclick="switchTab('inovasi-terbaru')">
+                            <i class="fa-solid fa-rocket"></i>
+                            <span>INOVASI TERBARU</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Main Content Body (Dynamic Sections) -->
+            <main class="content-area">
+
+                <!-- TAB 1: BERANDA -->
+                <section class="tab-pane active" id="tab-beranda">
+                    <!-- Hero Profile Header Card -->
+                    <div class="hero-card hero-profile-card border-gold">
+                        <div class="badge-tag tag-gold">
+                            <i class="fa-solid fa-hand-wave"></i>
+                            <span>HALO, SAYA</span>
+                        </div>
+                        <h2 class="profile-name-title">Bagas Reza Purwaka</h2>
+                        <p class="profile-tagline">
+                            <span class="tagline-item">Calon Guru Teknik Mesin</span>
+                            <span class="bullet-sep">•</span>
+                            <span class="tagline-item">D4 Teknik Mesin</span>
+                            <span class="bullet-sep">•</span>
+                            <span class="tagline-item">PPG Prajabatan 2026</span>
+                        </p>
+                        
+                        <div class="quote-box gold-quote commitment-box">
+                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                            <p class="quote-text-lg">
+                                "Berkomitmen menciptakan pembelajaran vokasi yang inovatif, adaptif, dan relevan dengan kebutuhan dunia industri."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- About Me Card Section -->
+                    <div class="hero-card hero-about-card">
+                        <div class="sub-header no-margin">
+                            <h3 class="sub-title"><i class="fa-solid fa-user-gear"></i> Tentang Saya</h3>
+                            <span class="sub-tag">Profil & Latar Belakang</span>
+                        </div>
+                        <div class="about-content-wrapper">
+                            <h4 class="about-tagline">Membangun Generasi Vokasi yang Siap Berkarya</h4>
+                            <p class="pane-description" style="margin-bottom: 0;">
+                                Saya merupakan lulusan D4 Teknik Mesin yang saat ini mengikuti Program Pendidikan Profesi Guru (PPG) Prajabatan Bidang Teknik Mesin. Saya memiliki ketertarikan pada pendidikan vokasi, desain teknik menggunakan CAD, serta pengembangan media pembelajaran digital.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Statistik Singkat Section -->
+                    <div class="sub-header">
+                        <h3 class="sub-title"><i class="fa-solid fa-chart-simple"></i> Statistik Singkat</h3>
+                        <span class="sub-tag">Ringkasan Kualifikasi</span>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper icon-blue">
+                                <span class="emoji-icon">🎓</span>
+                            </div>
+                            <div class="stat-info">
+                                <h4 class="stat-title">Sarjana Terapan</h4>
+                                <p class="stat-desc">D4 Teknik Mesin</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper icon-green">
+                                <span class="emoji-icon">👨‍🏫</span>
+                            </div>
+                            <div class="stat-info">
+                                <h4 class="stat-title">PPG Prajabatan</h4>
+                                <p class="stat-desc">Calon Guru Teknik Mesin</p>
+                            </div>
+                        </div>
+
+                        <div class="stat-card stat-card-wide">
+                            <div class="stat-icon-wrapper icon-purple">
+                                <span class="emoji-icon">🛠</span>
+                            </div>
+                            <div class="stat-info">
+                                <h4 class="stat-title">Bidang Keahlian</h4>
+                                <div class="skills-badges">
+                                    <span class="skill-pill">CAD</span>
+                                    <span class="skill-pill">Manufaktur</span>
+                                    <span class="skill-pill">Pendidikan Vokasi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- TAB 3: VISI CALON GURU -->
+                <section class="tab-pane" id="tab-visi-guru">
+
+
+                    <div class="sub-header">
+                        <h3 class="sub-title"><i class="fa-solid fa-layer-group"></i> Visi & Strategi</h3>
+                        <span class="sub-tag">Profil, Visi, & Rencana Aksi</span>
+                    </div>
+
+                    <div class="vision-3cards-grid">
+                        <!-- Card 1: Visi Pribadi -->
+                        <div class="vision-3card card-border-gold">
+                            <div class="vision-3card-header">
+                                <div class="vision-icon icon-gold">
+                                    <i class="fa-solid fa-user-gear"></i>
+                                </div>
+                                <span class="vision-card-tag tag-gold-sm">NILAI DIRI</span>
+                            </div>
+                            <h4 class="vision-3card-title">Visi Pribadi</h4>
+                            <div class="card-divider divider-gold"></div>
+                            <p class="vision-3card-desc">
+                                Saya ingin menjadi pribadi yang disiplin, bertanggung jawab, dan terus mau belajar. Saya akan berusaha mengembangkan kemampuan diri, memperbaiki kekurangan, serta menjaga sikap yang baik dalam kehidupan sehari-hari. Saya juga ingin memberikan manfaat bagi orang lain, baik di lingkungan keluarga, masyarakat, maupun dunia pendidikan.
+                            </p>
+                        </div>
+
+                        <!-- Card 2: Visi Calon Guru -->
+                        <div class="vision-3card card-border-cyan">
+                            <div class="vision-3card-header">
+                                <div class="vision-icon icon-cyan">
+                                    <i class="fa-solid fa-chalkboard-user"></i>
+                                </div>
+                                <span class="vision-card-tag tag-cyan-sm">PERAN GURU</span>
+                            </div>
+                            <h4 class="vision-3card-title">Visi Calon Guru</h4>
+                            <div class="card-divider divider-cyan"></div>
+                            <p class="vision-3card-desc">
+                                Saya ingin menjadi Guru Teknik Mesin yang kompeten, kreatif, dan bertanggung jawab. Saya ingin membantu peserta didik memahami materi, menguasai keterampilan praktik, serta mempersiapkan diri untuk menghadapi dunia kerja. Bagi saya, seorang guru tidak hanya mengajarkan ilmu, tetapi juga menjadi contoh yang baik dan membimbing peserta didik agar lebih percaya diri.
+                            </p>
+                        </div>
+
+                        <!-- Card 3: Strategi Mencapai Visi -->
+                        <div class="vision-3card card-border-green">
+                            <div class="vision-3card-header">
+                                <div class="vision-icon icon-green">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                </div>
+                                <span class="vision-card-tag tag-green-sm">RENCANA AKSI</span>
+                            </div>
+                            <h4 class="vision-3card-title">Strategi Mencapai Visi</h4>
+                            <div class="card-divider divider-green"></div>
+                            <p class="vision-3card-desc">
+                                Saya akan terus meningkatkan kompetensi profesional dan pedagogik melalui pembelajaran berkelanjutan, pelatihan, serta pengalaman mengajar. Selain itu, saya berkomitmen memanfaatkan teknologi, menerapkan pembelajaran yang aktif dan inovatif, serta membangun kolaborasi yang baik untuk menciptakan proses belajar yang bermakna.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <!-- TAB 5: REFLEKSI MATA KULIAH -->
+                <section class="tab-pane" id="tab-refleksi">
+                    <div class="hero-card border-purple">
+                        <div class="badge-tag tag-purple">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>EVALUASI KRITIS PPG PRAJABATAN</span>
+                        </div>
+                        <h2 class="pane-title">Refleksi Mata Kuliah</h2>
+                        <p class="pane-description">
+                            Kumpulan refleksi dari mata kuliah yang telah saya pelajari selama program PPG Prajabatan. Bagian ini berisi pemahaman materi, hasil tugas dan kegiatan pembelajaran, tantangan yang saya hadapi, serta penerapan ilmu yang diperoleh selama kegiatan PPL di sekolah.
+                        </p>
+                    </div>
+
+                    <div class="sub-header">
+                        <h3 class="sub-title"><i class="fa-solid fa-book-open"></i> Daftar Refleksi Mata Kuliah Inti</h3>
+                        <span class="sub-tag">Klik kartu mata kuliah untuk membaca ulasan komprehensif</span>
+                    </div>
+
+                    <div class="reflections-grid">
+                        <!-- Course 1 -->
+                        <div class="course-ref-card border-top-cyan" id="card-fppn">
+                            <div class="course-card-head" onclick="openRefModal('fppn')" title="Klik untuk membaca ulasan komprehensif">
+                                <span class="course-code-tag">MK 01</span>
+                                <h4 class="course-card-title">Filosofi Pendidikan dan Pendidikan Nilai</h4>
+                                <p class="course-card-snippet">Refleksi mendalam mengenai nilai-nilai filosofis pendidikan Indonesia.</p>
+                            </div>
+                            <div class="ppt-preview-box">
+                                <div class="slide-display-frame" id="slide-frame-fppn">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/12hrSJKguAsM-ueeLqLcaVvjbrfjsxS-M/preview" 
+                                        class="slide-card-iframe" 
+                                        allow="autoplay"
+                                        allowfullscreen="true"
+                                        loading="lazy"
+                                        title="Slide 1 Filosofi Pendidikan dan Nilai">
+                                    </iframe>
+                                </div>
+                                <div class="slide-controls-bar">
+                                    <span class="slide-page-counter" id="page-num-fppn"><i class="fa-solid fa-file-powerpoint" style="color:#f59e0b;"></i> Slide 1 Preview</span>
+                                    <div class="slide-action-tools">
+                                        <a href="https://docs.google.com/presentation/d/12hrSJKguAsM-ueeLqLcaVvjbrfjsxS-M/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="slide-tool-btn" title="Buka di Google Drive"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-card-actions">
+                                <a href="https://docs.google.com/presentation/d/12hrSJKguAsM-ueeLqLcaVvjbrfjsxS-M/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-preview-pdf">
+                                    <i class="fa-solid fa-file-powerpoint"></i> <span>Slide PPT</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/14xQeAFDD3TY-fSiNbkhm0cDXFt9_tm7b/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-lihat-refleksi">
+                                    <i class="fa-solid fa-file-pdf"></i> <span>Lihat Refleksi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Course 2 -->
+                        <div class="course-ref-card border-top-green" id="card-pdp">
+                            <div class="course-card-head" onclick="openRefModal('pdp')" title="Klik untuk membaca ulasan komprehensif">
+                                <span class="course-code-tag" style="color:#059669;">MK 02</span>
+                                <h4 class="course-card-title">Peserta Didik dan Pemahamannya</h4>
+                                <p class="course-card-snippet">Analisis pemetaan gaya belajar dan sosio-emosional peserta didik.</p>
+                            </div>
+                            <div class="ppt-preview-box">
+                                <div class="slide-display-frame" id="slide-frame-pdp">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1RwYgYxRdWQRwU6UeWqdC7NAJt1obIdik/preview" 
+                                        class="slide-card-iframe" 
+                                        allow="autoplay"
+                                        allowfullscreen="true"
+                                        loading="lazy"
+                                        title="Slide 1 Peserta Didik dan Pemahamannya">
+                                    </iframe>
+                                </div>
+                                <div class="slide-controls-bar">
+                                    <span class="slide-page-counter" id="page-num-pdp"><i class="fa-solid fa-file-powerpoint" style="color:#f59e0b;"></i> Slide 1 Preview</span>
+                                    <div class="slide-action-tools">
+                                        <a href="https://docs.google.com/presentation/d/1RwYgYxRdWQRwU6UeWqdC7NAJt1obIdik/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="slide-tool-btn" title="Buka di Google Drive"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-card-actions">
+                                <a href="https://docs.google.com/presentation/d/1RwYgYxRdWQRwU6UeWqdC7NAJt1obIdik/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-preview-pdf">
+                                    <i class="fa-solid fa-file-powerpoint"></i> <span>Slide PPT</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/1zQ07IpMywoxMy6nsqp5M15c_OHczUzr8/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-lihat-refleksi">
+                                    <i class="fa-solid fa-file-pdf"></i> <span>Lihat Refleksi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Course 3 -->
+                        <div class="course-ref-card border-top-purple" id="card-pmad">
+                            <div class="course-card-head" onclick="openRefModal('pmad')" title="Klik untuk membaca ulasan komprehensif">
+                                <span class="course-code-tag" style="color:#7c3aed;">MK 03</span>
+                                <h4 class="course-card-title">Pembelajaran Mendalam & Asesmen Dasar</h4>
+                                <p class="course-card-snippet">Perancangan pengajaran mendalam dan instrumen asesmen pencapaian.</p>
+                            </div>
+                            <div class="ppt-preview-box">
+                                <div class="slide-display-frame" id="slide-frame-pmad">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1Q6N7aiKtZHllsi02IXRLeEnliEX5SqAQ/preview" 
+                                        class="slide-card-iframe" 
+                                        allow="autoplay"
+                                        allowfullscreen="true"
+                                        loading="lazy"
+                                        title="Slide 1 Pembelajaran Mendalam & Asesmen Dasar">
+                                    </iframe>
+                                </div>
+                                <div class="slide-controls-bar">
+                                    <span class="slide-page-counter" id="page-num-pmad"><i class="fa-solid fa-file-powerpoint" style="color:#f59e0b;"></i> Slide 1 Preview</span>
+                                    <div class="slide-action-tools">
+                                        <a href="https://docs.google.com/presentation/d/1Q6N7aiKtZHllsi02IXRLeEnliEX5SqAQ/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="slide-tool-btn" title="Buka di Google Drive"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-card-actions">
+                                <a href="https://docs.google.com/presentation/d/1Q6N7aiKtZHllsi02IXRLeEnliEX5SqAQ/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-preview-pdf">
+                                    <i class="fa-solid fa-file-powerpoint"></i> <span>Slide PPT</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/16geMpQYu9GjFoUhoxwoHADQOFWO1y0eN/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-lihat-refleksi">
+                                    <i class="fa-solid fa-file-pdf"></i> <span>Lihat Refleksi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Course 4 -->
+                        <div class="course-ref-card border-top-amber" id="card-pplt">
+                            <div class="course-card-head" onclick="openRefModal('pplt')" title="Klik untuk membaca ulasan komprehensif">
+                                <span class="course-code-tag" style="color:#d97706;">MK 04</span>
+                                <h4 class="course-card-title">PPL Terbimbing</h4>
+                                <p class="course-card-snippet">Pengalaman asistensi mengajar dan praktik pengajaran terbimbing di sekolah mitra.</p>
+                            </div>
+                            <div class="ppt-preview-box">
+                                <div class="slide-display-frame" id="slide-frame-pplt">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1NwDyqxjKwKHd6cJE3JTRELy5lZKmr-yG/preview" 
+                                        class="slide-card-iframe" 
+                                        allow="autoplay"
+                                        allowfullscreen="true"
+                                        loading="lazy"
+                                        title="Slide 1 PPL Terbimbing">
+                                    </iframe>
+                                </div>
+                                <div class="slide-controls-bar">
+                                    <span class="slide-page-counter" id="page-num-pplt"><i class="fa-solid fa-file-powerpoint" style="color:#f59e0b;"></i> Slide 1 Preview</span>
+                                    <div class="slide-action-tools">
+                                        <a href="https://docs.google.com/presentation/d/1NwDyqxjKwKHd6cJE3JTRELy5lZKmr-yG/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="slide-tool-btn" title="Buka di Google Drive"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-card-actions">
+                                <a href="https://docs.google.com/presentation/d/1NwDyqxjKwKHd6cJE3JTRELy5lZKmr-yG/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-preview-pdf">
+                                    <i class="fa-solid fa-file-powerpoint"></i> <span>Slide PPT</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/1wyEUTjFSmX9nk-lXp5r9apuYhY6mmeLc/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-lihat-refleksi">
+                                    <i class="fa-solid fa-file-pdf"></i> <span>Lihat Refleksi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Course 5 -->
+                        <div class="course-ref-card border-top-green" id="card-ppb">
+                            <div class="course-card-head" onclick="openRefModal('ppb')" title="Klik untuk membaca ulasan komprehensif">
+                                <span class="course-code-tag" style="color:#059669;">MK 05</span>
+                                <h4 class="course-card-title">Growth Mindset</h4>
+                                <p class="course-card-snippet">Penerapan pola pikir berkembang bagi pendidik dan peserta didik.</p>
+                            </div>
+                            <div class="ppt-preview-box">
+                                <div class="slide-display-frame" id="slide-frame-ppb">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1mzxD6j2fUO2Wet-U7b6jFzeadKPVkMc4/preview" 
+                                        class="slide-card-iframe" 
+                                        allow="autoplay"
+                                        allowfullscreen="true"
+                                        loading="lazy"
+                                        title="Slide 1 Growth Mindset">
+                                    </iframe>
+                                </div>
+                                <div class="slide-controls-bar">
+                                    <span class="slide-page-counter" id="page-num-ppb"><i class="fa-solid fa-file-powerpoint" style="color:#f59e0b;"></i> Slide 1 Preview</span>
+                                    <div class="slide-action-tools">
+                                        <a href="https://docs.google.com/presentation/d/1mzxD6j2fUO2Wet-U7b6jFzeadKPVkMc4/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="slide-tool-btn" title="Buka di Google Drive"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-card-actions">
+                                <a href="https://docs.google.com/presentation/d/1mzxD6j2fUO2Wet-U7b6jFzeadKPVkMc4/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-preview-pdf">
+                                    <i class="fa-solid fa-file-powerpoint"></i> <span>Slide PPT</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/1FS57Vs_HPRx4YhbyPJ-YK8OJnyuRESb_/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-lihat-refleksi">
+                                    <i class="fa-solid fa-file-pdf"></i> <span>Lihat Refleksi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Course 6 -->
+                        <div class="course-ref-card border-top-purple" id="card-se1">
+                            <div class="course-card-head" onclick="openRefModal('se1')" title="Klik untuk membaca ulasan komprehensif">
+                                <span class="course-code-tag" style="color:#7c3aed;">MK 06</span>
+                                <h4 class="course-card-title">Selektif / Elektif 1</h4>
+                                <p class="course-card-snippet">Penguatan kompetensi spesifik pilihan sesuai peminatan vokasi.</p>
+                            </div>
+                            <div class="ppt-preview-box">
+                                <div class="slide-display-frame" id="slide-frame-se1">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1rZP4PgTlNFwdyq0bG3I9oCb9wgDduVg8/preview" 
+                                        class="slide-card-iframe" 
+                                        allow="autoplay"
+                                        allowfullscreen="true"
+                                        loading="lazy"
+                                        title="Slide 1 Selektif / Elektif 1">
+                                    </iframe>
+                                </div>
+                                <div class="slide-controls-bar">
+                                    <span class="slide-page-counter" id="page-num-se1"><i class="fa-solid fa-file-powerpoint" style="color:#f59e0b;"></i> Slide 1 Preview</span>
+                                    <div class="slide-action-tools">
+                                        <a href="https://docs.google.com/presentation/d/1rZP4PgTlNFwdyq0bG3I9oCb9wgDduVg8/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="slide-tool-btn" title="Buka di Google Drive"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-card-actions">
+                                <a href="https://docs.google.com/presentation/d/1rZP4PgTlNFwdyq0bG3I9oCb9wgDduVg8/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-preview-pdf">
+                                    <i class="fa-solid fa-file-powerpoint"></i> <span>Slide PPT</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/15GkbxrhFIU9NrEu11yv5CUGVY-s155nX/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-lihat-refleksi">
+                                    <i class="fa-solid fa-file-pdf"></i> <span>Lihat Refleksi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Course 7 -->
+                        <div class="course-ref-card border-top-cyan" id="card-pse">
+                            <div class="course-card-head" onclick="openRefModal('pse')" title="Klik untuk membaca ulasan komprehensif">
+                                <span class="course-code-tag">MK 07</span>
+                                <h4 class="course-card-title">Pembelajaran Sosial Emosional</h4>
+                                <p class="course-card-snippet">Penerapan 5 kompetensi sosial-emosional dalam lingkungan belajar.</p>
+                            </div>
+                            <div class="ppt-preview-box">
+                                <div class="slide-display-frame" id="slide-frame-pse">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1QPT3D_dlaSIu8mab7bAV3EQZSNej0wr-/preview" 
+                                        class="slide-card-iframe" 
+                                        allow="autoplay" 
+                                        allowfullscreen="true" 
+                                        loading="lazy" 
+                                        title="Slide 1 Pembelajaran Sosial Emosional">
+                                    </iframe>
+                                </div>
+                                <div class="slide-controls-bar">
+                                    <span class="slide-page-counter" id="page-num-pse"><i class="fa-solid fa-file-powerpoint" style="color:#f59e0b;"></i> Slide 1 Preview</span>
+                                    <div class="slide-action-tools">
+                                        <a href="https://docs.google.com/presentation/d/1QPT3D_dlaSIu8mab7bAV3EQZSNej0wr-/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="slide-tool-btn" title="Buka di Google Drive"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-card-actions">
+                                <a href="https://docs.google.com/presentation/d/1QPT3D_dlaSIu8mab7bAV3EQZSNej0wr-/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-preview-pdf">
+                                    <i class="fa-solid fa-file-powerpoint"></i> <span>Slide PPT</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/1RW-8qGfs1LvImV8wHYUPasmDC-3I_W1H/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-lihat-refleksi">
+                                    <i class="fa-solid fa-file-pdf"></i> <span>Lihat Refleksi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Course 8 -->
+                        <div class="course-ref-card border-top-purple" id="card-pmal">
+                            <div class="course-card-head" onclick="openRefModal('pmal')" title="Klik untuk membaca ulasan komprehensif">
+                                <span class="course-code-tag" style="color:#7c3aed;">MK 08</span>
+                                <h4 class="course-card-title">Pembelajaran Mendalam & Asesmen Lanjut</h4>
+                                <p class="course-card-snippet">Pengembangan asesmen berkelanjutan dan diferensiasi pengajaran.</p>
+                            </div>
+                            <div class="ppt-preview-box">
+                                <div class="slide-display-frame" id="slide-frame-pmal">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1PPhU_dza5izxWvuN547svY49bk9w3hK7/preview" 
+                                        class="slide-card-iframe" 
+                                        allow="autoplay" 
+                                        allowfullscreen="true" 
+                                        loading="lazy" 
+                                        title="Slide 1 Pembelajaran Mendalam & Asesmen Lanjut">
+                                    </iframe>
+                                </div>
+                                <div class="slide-controls-bar">
+                                    <span class="slide-page-counter" id="page-num-pmal"><i class="fa-solid fa-file-powerpoint" style="color:#f59e0b;"></i> Slide 1 Preview</span>
+                                    <div class="slide-action-tools">
+                                        <a href="https://docs.google.com/presentation/d/1PPhU_dza5izxWvuN547svY49bk9w3hK7/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="slide-tool-btn" title="Buka di Google Drive"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-card-actions">
+                                <a href="https://docs.google.com/presentation/d/1PPhU_dza5izxWvuN547svY49bk9w3hK7/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-preview-pdf">
+                                    <i class="fa-solid fa-file-powerpoint"></i> <span>Slide PPT</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/1n9Yx0XnUwSzL3rn2SDFXN3LK8U6Qgifx/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-lihat-refleksi">
+                                    <i class="fa-solid fa-file-pdf"></i> <span>Lihat Refleksi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Course 9 -->
+                        <div class="course-ref-card border-top-green" id="card-pplm">
+                            <div class="course-card-head" onclick="openRefModal('pplm')" title="Klik untuk membaca ulasan komprehensif">
+                                <span class="course-code-tag" style="color:#059669;">MK 09</span>
+                                <h4 class="course-card-title">PPL Mandiri</h4>
+                                <p class="course-card-snippet">Pelaksanaan praktik mengajar secara mandiri dan evaluasi pengajaran.</p>
+                            </div>
+                            <div class="ppt-preview-box">
+                                <div class="slide-display-frame" id="slide-frame-pplm">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1Gi4vxo9sVAg3nN9ojvTRt4YI4wQDcIIt/preview" 
+                                        class="slide-card-iframe" 
+                                        allow="autoplay" 
+                                        allowfullscreen="true" 
+                                        loading="lazy" 
+                                        title="Slide 1 PPL Mandiri">
+                                    </iframe>
+                                </div>
+                                <div class="slide-controls-bar">
+                                    <span class="slide-page-counter" id="page-num-pplm"><i class="fa-solid fa-file-powerpoint" style="color:#f59e0b;"></i> Slide 1 Preview</span>
+                                    <div class="slide-action-tools">
+                                        <a href="https://docs.google.com/presentation/d/1Gi4vxo9sVAg3nN9ojvTRt4YI4wQDcIIt/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="slide-tool-btn" title="Buka di Google Drive"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-card-actions">
+                                <a href="https://docs.google.com/presentation/d/1Gi4vxo9sVAg3nN9ojvTRt4YI4wQDcIIt/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-preview-pdf">
+                                    <i class="fa-solid fa-file-powerpoint"></i> <span>Slide PPT</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/16--lglntra-dt0QONzxfrtRHX-RPhIVE/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-lihat-refleksi">
+                                    <i class="fa-solid fa-file-pdf"></i> <span>Lihat Refleksi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Course 10 -->
+                        <div class="course-ref-card border-top-amber" id="card-pk">
+                            <div class="course-card-head" onclick="openRefModal('pk')" title="Klik untuk membaca ulasan komprehensif">
+                                <span class="course-code-tag" style="color:#d97706;">MK 10</span>
+                                <h4 class="course-card-title">Projek Kepemimpinan</h4>
+                                <p class="course-card-snippet">Perancangan proyek pembaruan pembelajaran berbasis kepemimpinan.</p>
+                            </div>
+                            <div class="ppt-preview-box">
+                                <div class="slide-display-frame" id="slide-frame-pk">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1DCOz4HJb2p6rOGYt9nwnhrd7YDLQ0iCO/preview" 
+                                        class="slide-card-iframe" 
+                                        allow="autoplay" 
+                                        allowfullscreen="true" 
+                                        loading="lazy" 
+                                        title="Slide 1 Projek Kepemimpinan">
+                                    </iframe>
+                                </div>
+                                <div class="slide-controls-bar">
+                                    <span class="slide-page-counter" id="page-num-pk"><i class="fa-solid fa-file-powerpoint" style="color:#f59e0b;"></i> Slide 1 Preview</span>
+                                    <div class="slide-action-tools">
+                                        <a href="https://docs.google.com/presentation/d/1DCOz4HJb2p6rOGYt9nwnhrd7YDLQ0iCO/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="slide-tool-btn" title="Buka di Google Drive"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-card-actions">
+                                <a href="https://docs.google.com/presentation/d/1DCOz4HJb2p6rOGYt9nwnhrd7YDLQ0iCO/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-preview-pdf">
+                                    <i class="fa-solid fa-file-powerpoint"></i> <span>Slide PPT</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/1egewT4bFiQt0ruYf7hR5ihyJ0kBgK5zf/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-lihat-refleksi">
+                                    <i class="fa-solid fa-file-pdf"></i> <span>Lihat Refleksi</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Course 11 -->
+                        <div class="course-ref-card border-top-purple" id="card-se2">
+                            <div class="course-card-head" onclick="openRefModal('se2')" title="Klik untuk membaca ulasan komprehensif">
+                                <span class="course-code-tag" style="color:#7c3aed;">MK 11</span>
+                                <h4 class="course-card-title">Selektif / Elektif 2</h4>
+                                <p class="course-card-snippet">Pendalaman materi elektif tingkat lanjut keguruan vokasi.</p>
+                            </div>
+                            <div class="ppt-preview-box">
+                                <div class="slide-display-frame" id="slide-frame-se2">
+                                    <iframe 
+                                        src="https://drive.google.com/file/d/1Vu-sx_Hoa7LESvYwm6VoZrQPOVSxUFjk/preview" 
+                                        class="slide-card-iframe" 
+                                        allow="autoplay" 
+                                        allowfullscreen="true" 
+                                        loading="lazy" 
+                                        title="Slide 1 Selektif / Elektif 2">
+                                    </iframe>
+                                </div>
+                                <div class="slide-controls-bar">
+                                    <span class="slide-page-counter" id="page-num-se2"><i class="fa-solid fa-file-powerpoint" style="color:#f59e0b;"></i> Slide 1 Preview</span>
+                                    <div class="slide-action-tools">
+                                        <a href="https://docs.google.com/presentation/d/1Vu-sx_Hoa7LESvYwm6VoZrQPOVSxUFjk/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="slide-tool-btn" title="Buka di Google Drive"><i class="fa-brands fa-google-drive"></i> Drive</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="course-card-actions">
+                                <a href="https://docs.google.com/presentation/d/1Vu-sx_Hoa7LESvYwm6VoZrQPOVSxUFjk/edit?usp=drive_link&ouid=112677128706717062608&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer" class="btn-preview-pdf">
+                                    <i class="fa-solid fa-file-powerpoint"></i> <span>Slide PPT</span>
+                                </a>
+                                <a href="https://drive.google.com/file/d/1nbSGkV9KVAZF9UuAkFqn31A9GQvTf9QD/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-lihat-refleksi">
+                                    <i class="fa-solid fa-file-pdf"></i> <span>Lihat Refleksi</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB: REFLEKSI KESELURUHAN -->
+                <section class="tab-pane" id="tab-refleksi-keseluruhan">
+                    <div class="hero-card border-amber">
+                        <div class="badge-tag tag-amber">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <span>SINTESIS & EVALUASI DIRI</span>
+                        </div>
+                        <h2 class="pane-title">Refleksi Keseluruhan Pengalaman Mengajar</h2>
+                        <p class="pane-description">
+                            Refleksi tentang pengalaman belajar dan praktik mengajar selama kegiatan PPL, mulai dari belajar menyusun pembelajaran, mengajar di kelas, hingga melaksanakan praktik di bengkel. Pengalaman ini membantu saya memahami peran dan tanggung jawab seorang guru serta menjadi bekal untuk terus memperbaiki diri dan mengembangkan kemampuan sebagai calon Guru Teknik Mesin.
+                        </p>
+                    </div>
+
+                    <div class="sub-header">
+                        <h3 class="sub-title"><i class="fa-solid fa-lightbulb"></i> Pilar Refleksi Pengalaman</h3>
+                        <span class="sub-tag">Evaluasi Pembelajaran Berkelanjutan</span>
+                    </div>
+
+                    <div class="vision-3cards-grid">
+                        <div class="vision-3card card-border-gold">
+                            <div class="vision-3card-header">
+                                <div class="vision-icon icon-gold"><i class="fa-solid fa-brain"></i></div>
+                                <span class="vision-card-tag tag-gold-sm">EVALUASI DIRI</span>
+                            </div>
+                            <h4 class="vision-3card-title">Transformasi Pola Pikir</h4>
+                            <div class="card-divider divider-gold"></div>
+                            <p class="vision-3card-desc">
+                                Selama proses belajar menjadi calon guru, saya semakin memahami bahwa menjadi guru bukan hanya tentang menyampaikan materi, tetapi juga tentang membimbing dan memahami kebutuhan peserta didik. Saya belajar bahwa setiap peserta didik memiliki kemampuan dan cara belajar yang berbeda. Oleh karena itu, saya perlu lebih sabar, terbuka terhadap masukan, dan mampu menyesuaikan cara mengajar agar pembelajaran menjadi lebih mudah dipahami.
+                            </p>
+                        </div>
+
+                        <div class="vision-3card card-border-cyan">
+                            <div class="vision-3card-header">
+                                <div class="vision-icon icon-cyan"><i class="fa-solid fa-chalkboard-user"></i></div>
+                                <span class="vision-card-tag tag-cyan-sm">PRAKTIK LAPANGAN</span>
+                            </div>
+                            <h4 class="vision-3card-title">Pengalaman PPL</h4>
+                            <div class="card-divider divider-cyan"></div>
+                            <p class="vision-3card-desc">
+                                Melalui kegiatan PPL, saya mendapatkan pengalaman langsung dalam mengenal lingkungan sekolah, menghadapi peserta didik, dan melaksanakan pembelajaran di kelas maupun praktik di bengkel. Saya belajar mengatur kelas, menyampaikan materi dengan jelas, serta memperhatikan keselamatan selama kegiatan praktik. Pengalaman ini membantu saya memahami bahwa menjadi guru membutuhkan persiapan, tanggung jawab, kesabaran, dan kemampuan menyesuaikan diri dengan situasi yang ada.
+                            </p>
+                        </div>
+
+                        <div class="vision-3card card-border-green">
+                            <div class="vision-3card-header">
+                                <div class="vision-icon icon-green"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                                <span class="vision-card-tag tag-green-sm">TINDAK LANJUT</span>
+                            </div>
+                            <h4 class="vision-3card-title">Rencana Pengembangan</h4>
+                            <div class="card-divider divider-green"></div>
+                            <p class="vision-3card-desc">
+                                Ke depannya, saya akan terus meningkatkan kemampuan mengajar dan memperdalam pengetahuan di bidang Teknik Mesin. Saya ingin belajar menggunakan metode dan media pembelajaran yang menarik, mengikuti pelatihan yang sesuai, serta menambah pengalaman praktik. Saya juga akan terbuka terhadap kritik dan saran sebagai bahan evaluasi diri agar dapat memperbaiki kekurangan dan menjadi guru yang lebih baik serta mampu membantu peserta didik berkembang.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB: INOVASI TERBARU -->
+                <section class="tab-pane" id="tab-inovasi-terbaru">
+                    <div class="hero-card border-purple">
+                        <div class="badge-tag tag-purple">
+                            <i class="fa-solid fa-cube"></i>
+                            <span>TECH3D • INOVASI PEMBELAJARAN</span>
+                        </div>
+                        <h2 class="pane-title">Inovasi Pembelajaran Terbaru</h2>
+                        <p class="pane-description">
+                            Tech3D merupakan website pembelajaran yang saya kembangkan untuk membantu mahasiswa dan peserta didik mempelajari Autodesk Inventor dengan lebih mudah dan menarik. Website ini menyediakan panduan fitur, jobsheet digital, serta model 3D interaktif yang dapat digunakan untuk memahami proses perancangan komponen mesin secara bertahap.
+                        </p>
+                    </div>
+
+                    <div class="sub-header">
+                        <h3 class="sub-title"><i class="fa-solid fa-layer-group"></i> Fitur & Komponen Inovasi Tech3D</h3>
+                        <span class="sub-tag">Media & Modul Praktik Digital Autodesk Inventor</span>
+                    </div>
+
+                    <div class="inovasi-4cards-grid">
+                        <!-- Card 1 -->
+                        <div class="vision-3card card-border-cyan">
+                            <div class="vision-3card-header">
+                                <div class="vision-icon icon-cyan"><i class="fa-solid fa-toolbox"></i></div>
+                                <span class="vision-card-tag tag-cyan-sm">MEDIA DIGITAL</span>
+                            </div>
+                            <h4 class="vision-3card-title">Pustaka Fitur Autodesk Inventor</h4>
+                            <div class="card-divider divider-cyan"></div>
+                            <p class="vision-3card-desc">
+                                Saya mengembangkan pustaka fitur Autodesk Inventor yang berisi panduan penggunaan berbagai tools untuk membuat sketsa 2D, model 3D, perakitan komponen, dan gambar kerja teknik. Fitur ini membantu pengguna mengenal fungsi setiap tools dan memahami penggunaannya dalam proses perancangan mesin.
+                            </p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="vision-3card card-border-green">
+                            <div class="vision-3card-header">
+                                <div class="vision-icon icon-green"><i class="fa-solid fa-book-bookmark"></i></div>
+                                <span class="vision-card-tag tag-green-sm">MODUL PRAKTIK</span>
+                            </div>
+                            <h4 class="vision-3card-title">Jobsheet Digital dan LKM</h4>
+                            <div class="card-divider divider-green"></div>
+                            <p class="vision-3card-desc">
+                                Saya menyediakan jobsheet dan Lembar Kerja Mahasiswa (LKM) digital sebagai panduan praktik Autodesk Inventor. Materi disusun secara bertahap agar pengguna dapat mengikuti langkah kerja, memahami gambar teknik, dan berlatih membuat komponen mesin secara mandiri maupun dengan bimbingan.
+                            </p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="vision-3card card-border-purple">
+                            <div class="vision-3card-header">
+                                <div class="vision-icon icon-purple"><i class="fa-solid fa-vr-cardboard"></i></div>
+                                <span class="vision-card-tag tag-purple-sm">VISUALISASI 3D</span>
+                            </div>
+                            <h4 class="vision-3card-title">Viewer Model 3D Interaktif</h4>
+                            <div class="card-divider divider-purple"></div>
+                            <p class="vision-3card-desc">
+                                Saya mengembangkan fitur viewer 3D yang memungkinkan pengguna melihat dan mengeksplorasi model komponen mesin secara langsung melalui website. Pengguna dapat memutar model, memperbesar tampilan, memilih sudut pandang, melihat potongan komponen, dan mengubah tampilan material untuk membantu memahami bentuk serta bagian-bagian objek.
+                            </p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="vision-3card card-border-gold">
+                            <div class="vision-3card-header">
+                                <div class="vision-icon icon-gold"><i class="fa-solid fa-qrcode"></i></div>
+                                <span class="vision-card-tag tag-gold-sm">AKSES DIGITAL</span>
+                            </div>
+                            <h4 class="vision-3card-title">Integrasi QR dan Panduan 3D</h4>
+                            <div class="card-divider divider-gold"></div>
+                            <p class="vision-3card-desc">
+                                Saya menghadirkan fitur pendukung berbasis QR yang menghubungkan lembar kerja praktik dengan panduan digital dan tampilan model 3D. Fitur ini dirancang untuk memudahkan pengguna mengakses materi melalui perangkat digital sehingga proses belajar praktik Teknik Mesin menjadi lebih praktis dan interaktif.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Penutup Inovasi Terbaru -->
+                    <div class="quote-box purple-quote" style="margin-top: 10px; margin-bottom: 20px;">
+                        <div style="display:flex; align-items:flex-start; gap:16px;">
+                            <i class="fa-solid fa-quote-left" style="font-size:24px; color:var(--text-purple); flex-shrink:0; margin-top:2px;"></i>
+                            <p style="font-size:14px; color:#e2e8f0; line-height:1.75; font-style:normal;">
+                                Melalui pengembangan Tech3D, saya berusaha memanfaatkan teknologi digital untuk membuat pembelajaran Teknik Mesin lebih mudah dipahami dan menarik. Saya berharap website ini dapat membantu mahasiswa dan peserta didik belajar secara mandiri, memahami bentuk komponen mesin, serta meningkatkan keterampilan dalam menggunakan Autodesk Inventor.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer-quote">
+                <span class="quote-mark">“</span>
+                <span class="quote-text">Terus belajar, mengabdi, dan menginspirasi untuk vokasi Indonesia maju.</span>
+                <span class="quote-mark">”</span>
+            </footer>
+        </div>
+
+    </div>
+
+    <!-- Portfolio Detail Modal View (For Portofolio 2 & 3 cards & Document Modals) -->
+    <div class="modal-overlay" id="portfolioModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closePortfolio()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-header">
+                <span class="modal-tag" id="modalTag">E-PORTOFOLIO</span>
+                <h2 class="modal-title" id="modalTitle">Detail Portofolio</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamic Content -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal-action" onclick="closePortfolio()">Kembali</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
